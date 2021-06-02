@@ -4,11 +4,19 @@
 
 * {
   .all();
+  .t;
 }
-
+ol,
+ul,
+li {
+  list-style: none;
+}
 html,
 body {
   .size(@h: auto; @min-h: 100vh; );
-  background-color: greenyellow;
+  background-color: #262626;
   color: white;
+}
+body {
+  .grid-parent();
 }

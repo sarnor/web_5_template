@@ -1,6 +1,6 @@
 import app from '../../main-module/index';
 
-export default app.directive('counterWrapper', [
+export default app.directive('mainWrapper', [
   function () {
     return {
       restrict: 'ACE',
