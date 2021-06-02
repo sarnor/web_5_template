@@ -5,9 +5,7 @@ export default app.directive('counterWrapper', [
     return {
       restrict: 'ACE',
       templateUrl: '../../../pages/main-wrapper.html',
-      link: function (scope, element, attrs) {
-        console.log('element');
-      },
+      link: function (scope, element, attrs) {},
     };
   },
 ]);

@@ -4,6 +4,7 @@ const webpack = require('webpack');
 
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const autoprefixer = require('autoprefixer');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
 const HtmlWebpackInjector = require('html-webpack-injector');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -131,6 +132,9 @@ const webCofig = {
         ],
       },
     ],
+  },
+  optimization: {
+    minimizer: [new CssMinimizerPlugin()],
   },
   performance: {
     maxEntrypointSize: 512000000,
