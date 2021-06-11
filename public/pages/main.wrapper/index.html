@@ -1,5 +1,16 @@
-<div>
-    <menu class="example">
-        <li class="li-example" ng-class="{'li-example-active':selected==$index}" ng-repeat="example in myExample" ng-click="functionClick($index)"><span>{{example}}</span></li>
-    </menu>
+<div id="wrapper">
+    <header>
+        <h1>{{siteName || "SiteName"}}</h1>
+        <menu class="mainMenu">
+            <li class="items" ng-class="{'active':selected==$index}" ng-repeat="item in items" ng-click="addActive($index)">
+                <span ng-bind="item"></span>
+            </li>
+        </menu>
+    </header>
+    <main>
+        <a href="#!/">home</a>
+        <a href="#!/auth">auth</a>
+        <ng-view></ng-view>
+    </main>
+    <footer>Footer</footer>
 </div>

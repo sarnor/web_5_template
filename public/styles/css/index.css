@@ -1,0 +1,13 @@
+.circle {
+
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: transparent;
+    border: 10px solid burlywood;
+    border-top: 10px solid transparent;
+    border-right: 10px solid transparent;
+    text-align: center;
+    line-height: 200px;
+    font-size: 22px;
+}

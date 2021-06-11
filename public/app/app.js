@@ -11,27 +11,46 @@ import '../styles/css/index.css';
 
 import icon from '../media/image/png/icon.png';
 
-import './controllers/main-controller/index.js';
+import main from './controllers/main/index.js';
 
-import mainPage from '../pages/main-wrapper.html';
+import './directives/main/index.js';
+import './directives/main.menu/index.js';
+import './factory/main/index.js';
 
-import './directives/main.directives/index.js';
+import auth from '../pages/auth/index.html';
+import home from '../pages/home/index.html';
+import error from '../pages/error/index.html';
 
-app.directive('example', function () {
-  return {
-    restrict: 'C',
-    link: function (scope, element, attrs) {
-      scope.myExample = [
-        'Example-1',
-        'Example-2',
-        'Example-3',
-        'Example-4',
-        'Example-5',
-      ];
-      scope.selected = 0;
-      scope.functionClick = function (index) {
-        scope.selected = index;
-      };
-    },
-  };
-});
+const cache = {};
+
+function importAll(r) {
+  r.keys().forEach((key) => (cache[key] = r(key)));
+}
+
+importAll(require.context('../pages/', true, /\.html$/));
+console.log('cache', cache);
+
+app.config([
+  '$routeProvider',
+  '$locationProvider',
+  function ($routeProvider, $locationProvider) {
+    $routeProvider
+      .when('/', {
+        templateUrl: home,
+      })
+      .when('/auth', {
+        templateUrl: auth,
+      })
+      .when('/error', {
+        templateUrl: error,
+      })
+
+      .otherwise({
+        redirectTo: '/error',
+      });
+  },
+]);
+
+// setTimeout(() => {
+//   document.querySelector('.circle').innerText = "papap".split('').map((e, i) => { `<span style="--rot:${i * 10}deg">${e}</span>` }).join('');
+// }, 2000)

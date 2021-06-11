@@ -12,6 +12,9 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 const globalConfig = require('./global.config');
 
+const os = require('os');
+const ifaces = os.networkInterfaces();
+
 const webCofig = {
   entry: {
     app: './public/app/app.js',
@@ -24,6 +27,7 @@ const webCofig = {
   },
   devServer: {
     port: `${globalConfig.devPort}`,
+    host: ifaces.Ethernet[1].address,
     overlay: {
       warnings: true,
       errors: true,
@@ -120,7 +124,7 @@ const webCofig = {
           {
             loader: 'file-loader',
             options: {
-              name: 'pages/[name].[ext]',
+              name: '[path][name].[ext]',
             },
           },
           {
@@ -159,7 +163,8 @@ const webCofig = {
   ],
 };
 
+setTimeout(() => {}, 2222);
 module.exports = (env = process.env.NODE_ENV === 'development') => {
-  webCofig.devtool = !env ? false : 'eval-cheap-module-source-map';
+  webCofig.devtool = !env ? false : false;
   return webCofig;
 };

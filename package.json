@@ -9,7 +9,7 @@
   },
   "scripts": {
     "start": "nodemon app.js",
-    "dev": "cross-env NODE_ENV=production  webpack serve --mode development --color --open --host 192.168.1.8",
+    "dev": "cross-env NODE_ENV=production  webpack serve --mode development --color --open ",
     "build": "cross-env NODE_ENV=production  webpack  --mode production"
   },
   "repository": {
@@ -52,6 +52,7 @@
   },
   "dependencies": {
     "@popperjs/core": "^2.9.2",
+    "@uirouter/angularjs": "^1.0.29",
     "angular": "^1.8.2",
     "angular-resource": "^1.8.2",
     "angular-route": "^1.8.2",
