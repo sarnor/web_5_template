@@ -1,14 +1,11 @@
 import app from '../../main-module/index';
-
-import pages from '../../imports/pages';
-console.log(pages.htmlPages);
-
+import mainPage from '../../../pages/main.wrapper/index.html';
 
 app.directive('mainWrapper', [
   () => {
     return {
       restrict: 'ACE',
-      templateUrl: pages.htmlPages[4],
+      templateUrl: mainPage,
       link: function (scope, element, attrs) {},
     };
   },

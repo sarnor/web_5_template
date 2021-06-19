@@ -17,30 +17,4 @@ import './directives/main/index.js';
 import './directives/main.menu/index.js';
 import './factory/main/index.js';
 
-import pages from './imports/pages';
-
-
- app.config([
-   '$routeProvider',
-   '$locationProvider',
-    ($routeProvider, $locationProvider)=> {
-     $routeProvider
-       .when('/', {
-         templateUrl: pages.htmlPages[3],
-       })
-       .when('/auth', {
-         templateUrl: pages.htmlPages[0],
-       })
-       .when('/error', {
-         templateUrl: pages.htmlPages[2],
-       })
-
-       .otherwise({
-         redirectTo: '/error',
-       });
-   },
- ]);
-
-// setTimeout(() => {
-//   document.querySelector('.circle').innerText = "papap".split('').map((e, i) => { `<span style="--rot:${i * 10}deg">${e}</span>` }).join('');
-// }, 2000)
+import './config/rout.conf/index';

@@ -8,7 +8,9 @@ const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
 const HtmlWebpackInjector = require('html-webpack-injector');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const {
+  CleanWebpackPlugin
+} = require('clean-webpack-plugin');
 
 const globalConfig = require('./global.config');
 
@@ -39,8 +41,7 @@ const webCofig = {
     },
   },
   module: {
-    rules: [
-      {
+    rules: [{
         test: /\.css$/i,
         use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader'],
       },
@@ -84,44 +85,37 @@ const webCofig = {
       {
         test: /\.(png|jpg|jpeg|svg|gif|webp|icon)$/,
         include: [path.resolve(__dirname, './public/media/image/')],
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: 'media/image/[ext]/[name].[ext]',
-            },
+        use: [{
+          loader: 'file-loader',
+          options: {
+            name: 'media/image/[ext]/[name].[ext]',
           },
-        ],
+        }, ],
       },
       {
         test: /\.(mp3|wav|ogg)$/,
         include: [path.resolve(__dirname, './public/media/music/')],
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: 'media/music/[name].[ext]',
-            },
+        use: [{
+          loader: 'file-loader',
+          options: {
+            name: 'media/music/[name].[ext]',
           },
-        ],
+        }, ],
       },
       {
         test: /\.(mp4|webm|ogv)$/,
         include: [path.resolve(__dirname, './public/media/video/')],
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: 'media/video/[name].[ext]',
-            },
+        use: [{
+          loader: 'file-loader',
+          options: {
+            name: 'media/video/[name].[ext]',
           },
-        ],
+        }, ],
       },
       {
         test: /\.(html)$/,
         include: [path.resolve(__dirname, './public/pages/')],
-        use: [
-          {
+        use: [{
             loader: 'file-loader',
             options: {
               name: '[path][name].[ext]',
@@ -157,6 +151,20 @@ const webCofig = {
       title: 'Index',
       base: '/',
       favicon: 'public/media/image/png/icon.png',
+    }),
+    new HtmlWebpackPlugin({
+      filename: './error.html',
+      template: './public/error.html',
+      title: 'Page not found',
+      base: '/',
+      favicon: 'public/media/image/png/error.png',
+    }),
+    new HtmlWebpackPlugin({
+      filename: './bad.html',
+      template: './public/bad.html',
+      title: 'Bad-Browser',
+      base: '/',
+      favicon: 'public/media/image/png/error.png',
     }),
     new HtmlWebpackInjector(),
     new CleanWebpackPlugin(),
