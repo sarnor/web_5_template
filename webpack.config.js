@@ -115,12 +115,12 @@ const webCofig = {
       {
         test: /\.(eot|svg|ttf|woff|woff2)$/,
         include: [
-          path.resolve(__dirname, './public/fonts/')
+          path.resolve(__dirname, './public/acsses')
         ],
         use: [{
           loader: 'file-loader',
           options: {
-            name: 'fonts/[name].[ext]',
+            name: 'acsses/[name].[ext]',
           }
         }]
       },
