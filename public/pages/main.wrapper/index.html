@@ -1,6 +1,9 @@
 <div id="wrapper">
     <header>
-        <h1>{{siteName || "SiteName"}}</h1>
+        <h1>{{siteName || "SiteName"}}
+            <i class="fa fa-wrench faa-wrench animated faa-fast"></i>
+            <i class="fad fa-abacus"></i>
+        </h1>
         <menu class="mainMenu">
             <li class="items" ng-class="{'active':selected==$index}" ng-repeat="item in items" ng-click="addActive($index)">
                 <span ng-bind="item"></span>

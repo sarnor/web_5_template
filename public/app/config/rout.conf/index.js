@@ -8,10 +8,10 @@ app.config([
     ($routeProvider, $locationProvider) => {
         $routeProvider
             .when('/', {
-                templateUrl: pages.htmlPages[0],
+                templateUrl: pages.htmlPages[1],
             })
             .when('/auth', {
-                templateUrl: pages.htmlPages[1],
+                templateUrl: pages.htmlPages[0],
             })
             .when('/error', {
                 templateUrl: errorPage,

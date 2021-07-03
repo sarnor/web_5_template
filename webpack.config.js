@@ -113,6 +113,18 @@ const webCofig = {
         }, ],
       },
       {
+        test: /\.(eot|svg|ttf|woff|woff2)$/,
+        include: [
+          path.resolve(__dirname, './public/fonts/')
+        ],
+        use: [{
+          loader: 'file-loader',
+          options: {
+            name: 'fonts/[name].[ext]',
+          }
+        }]
+      },
+      {
         test: /\.(html)$/,
         include: [path.resolve(__dirname, './public/pages/')],
         use: [{

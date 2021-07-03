@@ -6,6 +6,7 @@ import '../styles/less/index.less';
 import '../styles/sass/index.sass';
 import '../styles/scss/index.scss';
 import '../styles/css/index.css';
+import '../fonts/fonts.css';
 
 // import  media
 
@@ -16,5 +17,4 @@ import main from './controllers/main/index.js';
 import './directives/main/index.js';
 import './directives/main.menu/index.js';
 import './factory/main/index.js';
-
-import './config/rout.conf/index';
+import './config/rout.conf/index.js';
