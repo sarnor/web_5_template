@@ -132,7 +132,7 @@ const webCofig = {
         use: [{
           loader: 'file-loader',
           options: {
-            name: '[path][name].[ext]',
+            name: '[folder]/[name].[ext]',
           }
         }]
       },

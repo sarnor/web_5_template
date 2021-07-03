@@ -1,6 +1,6 @@
 import app from '../../main-module/index';
 import pages from '../../imports/pages.js';
-import errorPage from '../../../pages/main.wrapper/index.html';
+import errorPage from '../../../pages/error.page/index.html';
 
 app.config([
     '$routeProvider',
