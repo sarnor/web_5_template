@@ -126,20 +126,15 @@ const webCofig = {
       },
       {
         test: /\.(html)$/,
-        include: [path.resolve(__dirname, './public/pages/')],
-        use: [{
-            loader: 'file-loader',
-            options: {
-              name: '[path][name].[ext]',
-            },
-          },
-          {
-            loader: 'extract-loader',
-          },
-          {
-            loader: 'html-loader',
-          },
+        include: [
+          path.resolve(__dirname, './public/pages/')
         ],
+        use: [{
+          loader: 'file-loader',
+          options: {
+            name: '[path][name].[ext]',
+          }
+        }]
       },
     ],
   },

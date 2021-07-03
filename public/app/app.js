@@ -12,6 +12,7 @@ import '../acsses/fontawesome-pro-5.11.1/css/all.css';
 // import  media
 
 import icon from '../media/image/png/icon.png';
+import error from '../media/image/png/error.png';
 
 import main from './controllers/main/index.js';
 
