@@ -4,13 +4,11 @@
         </h1>
         <menu class="mainMenu">
             <li class="items" ng-class="{'active':selected==$index}" ng-repeat="item in items" ng-click="addActive($index)">
-                <span ng-bind="item"></span>
+                <a class="" href="#!/{{item}}">{{item}}</a>
             </li>
         </menu>
     </header>
     <main>
-        <a href="#!/">home</a>
-        <a href="#!/auth">auth</a>
         <ng-view></ng-view>
     </main>
     <footer>Footer</footer>
