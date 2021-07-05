@@ -1,6 +1,6 @@
 import app from '../../main-module/index';
 import menuList from '../../imports/pages.js';
-console.log('menuList', menuList.menuList);
+
 
 app.directive('mainMenu', function () {
   return {
