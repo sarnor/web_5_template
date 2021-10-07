@@ -1,7 +1,7 @@
 import app from '../../main-module/index';
 import pages from '../../imports/pages.js';
 import errorPage from '../../../pages/error.page/index.html';
-console.log('pages.htmlPages', pages.htmlPages);
+
 
 
 app.config([

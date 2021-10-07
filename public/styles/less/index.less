@@ -27,8 +27,26 @@ body {
     font-family: 'Tourney', cursive;
   }
 
-  a {
-    text-transform: capitalize;
+  li {
+
+    a {
+      font-family: 'Tourney', cursive;
+      font-size: x-large;
+      text-transform: capitalize;
+      text-decoration: none;
+      background-color: #262626;
+      color: aliceblue;
+      display: inline-block;
+      width: 100px;
+      text-align: center;
+    }
+
+    &.active {
+      a {
+        background-color: aliceblue;
+        color: #262626;
+      }
+    }
   }
 
 }
