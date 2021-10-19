@@ -4,25 +4,26 @@ import errorPage from '../../../pages/error.page/index.html';
 
 
 
+
 app.config([
     '$routeProvider',
     '$locationProvider',
     ($routeProvider, $locationProvider) => {
         $routeProvider
             .when('/', {
-                templateUrl: pages.htmlPages[2],
+                templateUrl: pages.menuPath[0],
             })
             .when('/home', {
-                templateUrl: pages.htmlPages[2],
-            })
-            .when('/auth', {
-                templateUrl: pages.htmlPages[1],
-            })
-            .when('/reg', {
-                templateUrl: pages.htmlPages[3],
+                templateUrl: pages.menuPath[0],
             })
             .when('/about', {
-                templateUrl: pages.htmlPages[0],
+                templateUrl: pages.menuPath[1],
+            })
+            .when('/auth', {
+                templateUrl: pages.menuPath[2],
+            })
+            .when('/reg', {
+                templateUrl: pages.menuPath[3],
             })
             .when('/error', {
                 templateUrl: errorPage,

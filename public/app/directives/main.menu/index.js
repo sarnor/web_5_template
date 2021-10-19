@@ -7,9 +7,9 @@ app.directive('mainMenu', ['$location', (location) => {
     restrict: 'C',
     link: (scope, element, attrs) => {
       scope.items = menuList.menuList;
-      scope.selected = location.url().toString().indexOf(location.url().toString().split('/')[1]);
+      let r = menuList.menuList.indexOf(location.url().toString().split('/')[1]);
+      scope.selected = r == -1 ? 0 : r;
       scope.addActive = index => scope.selected = index;
-      console.dir(location.url().toString().split('/')[1]);
     },
   };
 }]);

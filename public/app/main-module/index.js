@@ -1,8 +1,7 @@
-import $$$ from 'angular';
-import ngResource from 'angular-resource';
+import mainApp from 'angular';
 import ngRoute from 'angular-route';
+import ngResource from 'angular-resource';
 
-
-const app = angular.module('$$$', ['ngRoute', 'ngResource']);
+const app = angular.module('mainApp', ['ngRoute', 'ngResource']);
 
 export default app;
