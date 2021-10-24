@@ -19,6 +19,7 @@ app.use(
   })
 );
 
+
 app.get('/*', (req, res) => {
   fs.readFile(
     path.resolve(__dirname, `./${globalConf.buildFolder}/`, './index.html'),
@@ -31,5 +32,3 @@ app.get('/*', (req, res) => {
     }
   );
 });
-
-
