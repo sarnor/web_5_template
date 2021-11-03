@@ -9,8 +9,10 @@
   },
   "scripts": {
     "start": "nodemon app.js",
-    "dev": "cross-env NODE_ENV=production  webpack serve --mode development --color --open ",
-    "build": "cross-env NODE_ENV=production  webpack  --mode production"
+    "dev": "cross-env NODE_ENV=production  webpack serve --mode development --color --open --config web.public.config.js",
+    "build": "cross-env NODE_ENV=production  webpack  --mode production --config web.public.config.js",
+    "devad": "cross-env NODE_ENV=production  webpack serve --mode development --color --open --config web.admin.config.js",
+    "buildad": "cross-env NODE_ENV=production  webpack  --mode production --config web.admin.config.js"
   },
   "repository": {
     "type": "git",

@@ -1,5 +1,5 @@
 const express = require('express'),
-  //bodyParser = require('body-parser'),
+  bodyParser = require('body-parser'),
   http = require('http'),
   path = require('path'),
   mongoose = require('mongoose'),
@@ -14,10 +14,11 @@ app.listen(globalConf.serverPort);
 const server = http.createServer(app);
 
 app.use(express.json());
+app.use(bodyParser.json());
 
 const dbStart = async () => {
   try {
-    await mongoose.connect('mongodb+srv://admin54iosd85h7rjnF75HH54:54iosd85h7rjnF75HH54@admin.swmgk.mongodb.net/webpack-template?retryWrites=true&w=majority')
+    await mongoose.connect('mongodb+srv://admin123:admin123@admin.k8w8p.mongodb.net/admin?retryWrites=true&w=majority')
   } catch (err) {
     console.log(err)
   }
@@ -29,6 +30,7 @@ app.use(
     index: 'none',
   })
 );
+
 
 
 app.get('/*', (req, res) => {
