@@ -1,68 +1,68 @@
 {
-  "name": "web_5_template",
-  "version": "0.0.1",
-  "description": "generic webpack5 template",
-  "main": "server.js",
-  "engines": {
-    "node": "14.17.0",
-    "npm": "6.14.13"
-  },
-  "scripts": {
-    "start": "nodemon app.js",
-    "dev": "cross-env NODE_ENV=production  webpack serve --mode development --color --open --config web.public.config.js",
-    "build": "cross-env NODE_ENV=production  webpack  --mode production --config web.public.config.js",
-    "devad": "cross-env NODE_ENV=production  webpack serve --mode development --color --open --config web.admin.config.js",
-    "buildad": "cross-env NODE_ENV=production  webpack  --mode production --config web.admin.config.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/sarnor/web_5_template.git"
-  },
-  "author": "Air",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/sarnor/web_5_template/issues"
-  },
-  "homepage": "https://github.com/sarnor/web_5_template#readme",
-  "devDependencies": {
-    "@babel/core": "^7.14.3",
-    "@babel/preset-env": "^7.14.4",
-    "autoprefixer": "^10.2.6",
-    "babel-loader": "^8.2.2",
-    "clean-webpack-plugin": "^4.0.0-alpha.0",
-    "cross-env": "^7.0.3",
-    "css-loader": "^5.2.6",
-    "css-minimizer-webpack-plugin": "^3.0.1",
-    "extract-loader": "^5.1.0",
-    "file-loader": "^6.2.0",
-    "html-loader": "^2.1.2",
-    "html-webpack-injector": "^1.1.4",
-    "html-webpack-plugin": "^5.3.1",
-    "less": "^4.1.1",
-    "less-loader": "^9.0.0",
-    "mini-css-extract-plugin": "^1.6.0",
-    "node-sass": "^6.0.0",
-    "postcss-loader": "^5.3.0",
-    "quick-mixins-less": "0.0.91",
-    "sass-loader": "^12.0.0",
-    "style-loader": "^2.0.0",
-    "ts-loader": "^9.2.2",
-    "typescript": "^4.3.2",
-    "webpack": "^5.38.1",
-    "webpack-cli": "^4.7.0",
-    "webpack-dev-server": "^3.11.2"
-  },
-  "dependencies": {
-    "@popperjs/core": "^2.9.2",
-    "angular": "^1.8.2",
-    "angular-resource": "^1.8.2",
-    "angular-route": "^1.8.2",
-    "angular-ui-router": "^1.0.29",
-    "body-parser": "^1.19.0",
-    "bootstrap": "^5.0.1",
-    "express": "^4.17.1",
-    "jquery": "^3.6.0",
-    "mongoose": "^6.0.12",
-    "nodemon": "^2.0.7"
-  }
+	"name": "web_5_template",
+	"version": "0.0.1",
+	"description": "generic webpack5 template",
+	"main": "server.js",
+	"engines": {
+		"node": "14.17.0",
+		"npm": "6.14.13"
+	},
+	"scripts": {
+		"start": "nodemon app.js",
+		"dev": "cross-env NODE_ENV=production  webpack serve --mode development --color --open --config web.public.config.js",
+		"build": "cross-env NODE_ENV=production  webpack  --mode production --config web.public.config.js",
+		"devad": "cross-env NODE_ENV=production  webpack serve --mode development --color --open --config web.admin.config.js",
+		"buildad": "cross-env NODE_ENV=production  webpack  --mode production --config web.admin.config.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/sarnor/web_5_template.git"
+	},
+	"author": "Air",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/sarnor/web_5_template/issues"
+	},
+	"homepage": "https://github.com/sarnor/web_5_template#readme",
+	"devDependencies": {
+		"@babel/core": "^7.14.3",
+		"@babel/preset-env": "^7.14.4",
+		"autoprefixer": "^10.2.6",
+		"babel-loader": "^8.2.2",
+		"clean-webpack-plugin": "^4.0.0-alpha.0",
+		"cross-env": "^7.0.3",
+		"css-loader": "^5.2.6",
+		"css-minimizer-webpack-plugin": "^3.0.1",
+		"extract-loader": "^5.1.0",
+		"file-loader": "^6.2.0",
+		"html-loader": "^2.1.2",
+		"html-webpack-injector": "^1.1.4",
+		"html-webpack-plugin": "^5.3.1",
+		"less": "^4.1.1",
+		"less-loader": "^9.0.0",
+		"mini-css-extract-plugin": "^1.6.0",
+		"node-sass": "^6.0.0",
+		"postcss-loader": "^5.3.0",
+		"quick-mixins-less": "0.0.91",
+		"sass-loader": "^12.0.0",
+		"style-loader": "^2.0.0",
+		"ts-loader": "^9.2.2",
+		"typescript": "^4.3.2",
+		"webpack": "^5.38.1",
+		"webpack-cli": "^4.7.0",
+		"webpack-dev-server": "^3.11.2"
+	},
+	"dependencies": {
+		"@popperjs/core": "^2.9.2",
+		"angular": "^1.8.2",
+		"angular-resource": "^1.8.2",
+		"angular-route": "^1.8.2",
+		"angular-ui-router": "^1.0.29",
+		"body-parser": "^1.19.0",
+		"bootstrap": "^5.0.1",
+		"express": "^4.17.1",
+		"jquery": "^3.6.0",
+		"mongoose": "^6.0.12",
+		"nodemon": "^2.0.7"
+	}
 }
