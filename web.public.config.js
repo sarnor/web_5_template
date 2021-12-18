@@ -1,31 +1,29 @@
-const path = require('path');
+const path = require("path");
 
-const webpack = require('webpack');
+const webpack = require("webpack");
 
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const autoprefixer = require('autoprefixer');
-const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const autoprefixer = require("autoprefixer");
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 
-const HtmlWebpackInjector = require('html-webpack-injector');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const {
-  CleanWebpackPlugin
-} = require('clean-webpack-plugin');
+const HtmlWebpackInjector = require("html-webpack-injector");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
-const globalConfig = require('./global.config');
+const globalConfig = require("./global.config");
 
-const os = require('os');
+const os = require("os");
 const ifaces = os.networkInterfaces();
 
 const webCofig = {
   entry: {
-    app: './public/app/app.js',
-    _head: './public/app/head.js',
+    app: "./public/app/app.js",
+    _head: "./public/app/head.js",
   },
   output: {
-    path: path.resolve(__dirname, `./${globalConfig.buildFolder}`),
-    filename: '[name].js',
-    publicPath: '/',
+    path: path.resolve(__dirname, `./${globalConfig.publicBuildFolder}`),
+    filename: "[name].js",
+    publicPath: "/",
   },
   devServer: {
     port: `${globalConfig.devPort}`,
@@ -35,106 +33,113 @@ const webCofig = {
       errors: true,
     },
     proxy: {
-      '/': {
+      "/": {
         target: `http://localhost:${globalConfig.serverPort}`,
       },
     },
   },
   module: {
-    rules: [{
+    rules: [
+      {
         test: /\.css$/i,
-        use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader'],
+        use: [MiniCssExtractPlugin.loader, "css-loader", "postcss-loader"],
       },
       {
         test: /\.less$/i,
         use: [
           MiniCssExtractPlugin.loader,
-          'css-loader',
-          'postcss-loader',
-          'less-loader',
+          "css-loader",
+          "postcss-loader",
+          "less-loader",
         ],
       },
       {
         test: /\.sass$/i,
         use: [
           MiniCssExtractPlugin.loader,
-          'css-loader',
-          'postcss-loader',
-          'sass-loader',
+          "css-loader",
+          "postcss-loader",
+          "sass-loader",
         ],
       },
       {
         test: /\.scss$/i,
         use: [
           MiniCssExtractPlugin.loader,
-          'css-loader',
-          'postcss-loader',
-          'sass-loader',
+          "css-loader",
+          "postcss-loader",
+          "sass-loader",
         ],
       },
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: 'babel-loader',
+        loader: "babel-loader",
       },
       {
         test: /\.tsx?$/,
-        use: 'ts-loader',
+        use: "ts-loader",
         exclude: /node_modules/,
       },
       {
         test: /\.(png|jpg|jpeg|svg|gif|webp|icon)$/,
-        include: [path.resolve(__dirname, './public/media/image/')],
-        use: [{
-          loader: 'file-loader',
-          options: {
-            name: 'media/image/[ext]/[name].[ext]',
+        include: [path.resolve(__dirname, "./public/media/image/")],
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              name: "media/image/[ext]/[name].[ext]",
+            },
           },
-        }, ],
+        ],
       },
       {
         test: /\.(mp3|wav|ogg)$/,
-        include: [path.resolve(__dirname, './public/media/music/')],
-        use: [{
-          loader: 'file-loader',
-          options: {
-            name: 'media/music/[name].[ext]',
+        include: [path.resolve(__dirname, "./public/media/music/")],
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              name: "media/music/[name].[ext]",
+            },
           },
-        }, ],
+        ],
       },
       {
         test: /\.(mp4|webm|ogv)$/,
-        include: [path.resolve(__dirname, './public/media/video/')],
-        use: [{
-          loader: 'file-loader',
-          options: {
-            name: 'media/video/[name].[ext]',
+        include: [path.resolve(__dirname, "./public/media/video/")],
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              name: "media/video/[name].[ext]",
+            },
           },
-        }, ],
+        ],
       },
       {
         test: /\.(eot|svg|ttf|woff|woff2)$/,
-        include: [
-          path.resolve(__dirname, './public/acsses')
+        include: [path.resolve(__dirname, "./public/acsses")],
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              name: "acsses/[name].[ext]",
+            },
+          },
         ],
-        use: [{
-          loader: 'file-loader',
-          options: {
-            name: 'acsses/[name].[ext]',
-          }
-        }]
       },
       {
         test: /\.(html)$/,
-        include: [
-          path.resolve(__dirname, './public/pages/')
+        include: [path.resolve(__dirname, "./public/pages/")],
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              name: "[folder]/[name].[ext]",
+            },
+          },
         ],
-        use: [{
-          loader: 'file-loader',
-          options: {
-            name: '[folder]/[name].[ext]',
-          }
-        }]
       },
     ],
   },
@@ -146,32 +151,32 @@ const webCofig = {
     maxAssetSize: 512000000,
   },
   resolve: {
-    extensions: ['.tsx', '.ts', '.js'],
+    extensions: [".tsx", ".ts", ".js"],
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: 'style/index.css',
+      filename: "style/index.css",
     }),
     new HtmlWebpackPlugin({
-      filename: './index.html',
-      template: './public/index.html',
-      title: 'Index',
-      base: '/',
-      favicon: 'public/media/image/png/icon.png',
+      filename: "./index.html",
+      template: "./public/index.html",
+      title: "Index",
+      base: "/",
+      favicon: "public/media/image/png/icon.png",
     }),
     new HtmlWebpackPlugin({
-      filename: './error.html',
-      template: './public/error.html',
-      title: 'Page not found',
-      base: '/',
-      favicon: 'public/media/image/png/error.png',
+      filename: "./error.html",
+      template: "./public/error.html",
+      title: "Page not found",
+      base: "/",
+      favicon: "public/media/image/png/error.png",
     }),
     new HtmlWebpackPlugin({
-      filename: './bad.html',
-      template: './public/bad.html',
-      title: 'Bad-Browser',
-      base: '/',
-      favicon: 'public/media/image/png/error.png',
+      filename: "./bad.html",
+      template: "./public/bad.html",
+      title: "Bad-Browser",
+      base: "/",
+      favicon: "public/media/image/png/error.png",
     }),
     new HtmlWebpackInjector(),
     new CleanWebpackPlugin(),
@@ -179,7 +184,7 @@ const webCofig = {
 };
 
 setTimeout(() => {}, 2222);
-module.exports = (env = process.env.NODE_ENV === 'development') => {
+module.exports = (env = process.env.NODE_ENV === "development") => {
   webCofig.devtool = !env ? false : false;
   return webCofig;
 };

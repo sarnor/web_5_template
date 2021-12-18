@@ -1,0 +1,30 @@
+.scroll-to-top {
+  position: fixed;
+  bottom: 50px;
+  right: 20px;
+  width: 48px;
+  height: 48px;
+  opacity: 0;
+  z-index: -1;
+  visibility: hidden;
+  pointer-events: none;
+  background-color: #404040;
+  border-radius: 50%;
+  box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12),
+    0 2px 4px -1px rgba(0, 0, 0, 0.3);
+  transition: all 0.4s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  i {
+    font-size: xx-large;
+    color: aliceblue;
+  }
+  &.visible {
+    opacity: 1;
+    z-index: 999;
+    visibility: visible;
+    pointer-events: auto;
+  }
+}

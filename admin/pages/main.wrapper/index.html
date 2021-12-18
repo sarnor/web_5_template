@@ -1,0 +1,18 @@
+<div id="wrapper">
+    <header>
+        <h1>{{siteName || "SiteName"}}
+        </h1>
+        <menu class="mainMenu">
+            <li class="items" ng-class="{'active':selected==$index}" ng-repeat="item in items" ng-click="addActive($index)">
+                <a class="" href="#!/{{item}}">{{item}}</a>
+            </li>
+        </menu>
+    </header>
+    <main>
+        <ng-view></ng-view>
+    </main>
+    <footer>Footer</footer>
+    <div class="scroll-to-top">
+        <i class="far fa-arrow-alt-up"></i>
+    </div>
+</div>
