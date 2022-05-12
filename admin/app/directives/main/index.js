@@ -6,7 +6,7 @@ app.directive("mainWrapper", [
     return {
       restrict: "ACE",
       templateUrl: mainPage,
-      link: function (scope, element, attrs) {},
+      link: (scope, element, attrs) => { },
     };
   },
 ]);

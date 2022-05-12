@@ -8,7 +8,7 @@ import "../styles/sass/index.sass";
 import "../styles/scss/index.scss";
 import "../styles/css/index.css";
 import "../acsses/fonts/fonts.css";
-import "../acsses/fontawesome-pro-5.11.1/css/all.css";
+import "../acsses/fontawesome-pro-5.11.1/js/all.js";
 
 // import  media
 
@@ -33,4 +33,4 @@ import "./config/rout.conf/index.js";
 ///////////////////////////////////////////////////////////////////////////////// import libs
 
 // import fontawesome
-import "../acsses/fontawesome-pro-5.11.1/js/fontawesome.js";
+import "../acsses/fontawesome-pro-5.11.1/css/all.css";

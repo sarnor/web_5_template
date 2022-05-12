@@ -2,6 +2,9 @@
 @import "https://fonts.googleapis.com/css2?family=Tourney:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap";
 
 * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 ol,
@@ -14,17 +17,27 @@ html,
 body {
   color: white;
   background-color: #262626;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
 }
 
 body {
   * {
-    border: 1px solid crimson;
+    //border: 1px solid crimson;
   }
 
   main-wrapper {
-    display: block;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
 
     #wrapper {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: auto 1fr auto;
+
       header {
         h1 {
           font-family: "Tourney", cursive;
@@ -56,6 +69,14 @@ body {
       }
 
       main {
+        >i {
+          margin: 25px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: brown;
+          color: aliceblue;
+        }
       }
 
       footer {
@@ -80,4 +101,10 @@ input {
   text-align: center;
   box-shadow: inset 0 0 0 100px #272727;
   color: aliceblue;
+}
+
+i {
+  color: aliceblue;
+  background-color: aqua;
+  font-size: 88px;
 }
