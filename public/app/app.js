@@ -4,8 +4,8 @@ import "./type.script/index.ts";
 // import  styles
 import "../styles/less/index.less";
 import "../styles/less/directives/scroll.up/index.less";
-import "../styles/sass/index.sass";
-import "../styles/scss/index.scss";
+// import "../styles/sass/index.sass";
+// import "../styles/scss/index.scss";
 import "../styles/css/index.css";
 import "../acsses/fonts/fonts.css";
 import "../acsses/fontawesome-pro-5.11.1/js/all.js";
